@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/ic.dart';
-import 'package:open_resto/data/model/restaurant.dart';
+import 'package:open_resto/data/model/restaurant_model.dart';
 import 'package:open_resto/common/styles.dart';
 import 'package:open_resto/widgets/buttons/rounded_button.dart';
 
@@ -38,8 +38,8 @@ class RestaurantCard extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(radius),
                       child: Image.network(
+                        "https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}",
                         fit: BoxFit.cover,
-                        restaurant.pictureId,
                         width: spacing * 12,
                         height: spacing * 12,
                       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/uil.dart';
 import 'package:open_resto/common/styles.dart';
@@ -22,7 +23,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               InkWell(
-                onTap: () => Navigator.pop(context),
+                onTap: () => Get.back(),
                 child: const Iconify(Uil.angle_left_b,
                     color: orange400, size: spacing * 4),
               ),

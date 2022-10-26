@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/ic.dart';
-import 'package:open_resto/data/model/menu.dart';
 import 'package:open_resto/common/styles.dart';
+import 'package:open_resto/data/model/category_model.dart';
 import 'package:open_resto/widgets/buttons/rounded_button.dart';
 
 class FoodCard extends StatelessWidget {
-  final Drink data;
+  // const FoodCard({super.key});
+
+  final Category data;
   const FoodCard({super.key, required this.data});
 
   @override
@@ -20,8 +22,8 @@ class FoodCard extends StatelessWidget {
             boxShadow: const [
               BoxShadow(
                 color: neutral100,
-                spreadRadius: 6,
-                blurRadius: 4,
+                spreadRadius: 4,
+                blurRadius: 2,
               ),
             ],
           ),
