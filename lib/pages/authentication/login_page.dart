@@ -52,12 +52,11 @@ class LoginPage extends StatelessWidget {
                   runSpacing: spacing * 2,
                   children: [
                     const PrimaryInput(
-                      inputPlaceholder: "0628 1234 5678 9101 ",
-                      iconData: Bi.phone,
-                      inputType: TextInputType.number,
-                    ),
+                        inputPlaceholder: "0628 1234 5678 9101 ",
+                        iconData: Bi.phone,
+                        inputType: TextInputType.number),
                     const PrimaryInput(
-                      inputPlaceholder: "*********** ",
+                      inputPlaceholder: "***********",
                       iconData: Uil.lock,
                     ),
                     Center(

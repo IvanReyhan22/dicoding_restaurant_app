@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             page: () => const DetailRestaurantPage()),
         GetPage(
             name: '/search_restaurant',
-            page: () => SearchRestaurantPage(),
+            page: () => const SearchRestaurantPage(),
             transition: Transition.rightToLeft),
       ],
       unknownRoute: GetPage(name: '/notfound', page: () => const OnBoarding()),
