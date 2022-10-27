@@ -18,6 +18,7 @@ class DetailRestaurantPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.maybeOf(context)!.size;
     return Scaffold(
       appBar: const MyAppBar(
         title: 'Restaurant',
@@ -156,7 +157,7 @@ class DetailRestaurantPage extends StatelessWidget {
                       ),
                       const SizedBox(height: spacing * 2),
                       SizedBox(
-                        height: 140,
+                        height: 160,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           primary: false,
@@ -166,8 +167,7 @@ class DetailRestaurantPage extends StatelessWidget {
                             final menu = data.detailRestaurant.restaurant.menus
                                 ?.foods[index];
                             return SizedBox(
-                                width: 280,
-                                height: 100,
+                                width: screenSize.width - (spacing * 5),
                                 child: Padding(
                                   padding:
                                       const EdgeInsets.only(right: spacing * 2),
@@ -182,7 +182,7 @@ class DetailRestaurantPage extends StatelessWidget {
                       ),
                       const SizedBox(height: spacing * 2),
                       SizedBox(
-                        height: 140,
+                        height: 160,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: data
@@ -191,8 +191,7 @@ class DetailRestaurantPage extends StatelessWidget {
                             final menu = data.detailRestaurant.restaurant.menus
                                 ?.drinks[index];
                             return SizedBox(
-                                width: 280,
-                                height: 100,
+                                width: screenSize.width - (spacing * 5),
                                 child: Padding(
                                   padding:
                                       const EdgeInsets.only(right: spacing * 2),

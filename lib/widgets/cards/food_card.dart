@@ -14,6 +14,7 @@ class FoodCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Container(
           decoration: BoxDecoration(
@@ -30,6 +31,7 @@ class FoodCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(spacing + (spacing / 2)),
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 const Iconify(
                   Ic.outline_fastfood,
@@ -38,10 +40,12 @@ class FoodCard extends StatelessWidget {
                 const SizedBox(width: spacing * 2),
                 Expanded(
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         data.name,
+                        overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.headline6,
                       ),
                       Text(
