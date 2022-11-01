@@ -1,7 +1,8 @@
 import 'package:flutter/animation.dart';
 
+const Color white = Color(0xFFFFFFFF);
 const Color black = Color(0xFF212226);
-const Color lightBackground = Color(0xFFF8F9F8);
+const Color lightBackground = Color.fromARGB(255, 243, 243, 243);
 const Color neutral50 = Color(0xFFF8FAFC);
 const Color neutral100 = Color(0xFFF1F5F9);
 const Color neutral200 = Color(0xFFE2E8F0);

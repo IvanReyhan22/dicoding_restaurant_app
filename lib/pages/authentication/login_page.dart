@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/bi.dart';
 import 'package:iconify_flutter/icons/fa.dart';
+import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:iconify_flutter/icons/uil.dart';
+import 'package:open_resto/controller/login_page_controller.dart';
 import 'package:open_resto/widgets/buttons/default_button.dart';
 import 'package:open_resto/widgets/inputs/primary_input.dart';
 import 'package:open_resto/widgets/my_app_bar.dart';
@@ -11,7 +12,9 @@ import 'package:open_resto/common/styles.dart';
 import 'package:colorful_iconify_flutter/icons/logos.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+
+  final pageController = Get.put(LoginPageController());
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +54,17 @@ class LoginPage extends StatelessWidget {
                 Wrap(
                   runSpacing: spacing * 2,
                   children: [
-                    const PrimaryInput(
-                        inputPlaceholder: "0628 1234 5678 9101 ",
-                        iconData: Bi.phone,
-                        inputType: TextInputType.number),
-                    const PrimaryInput(
+                    PrimaryInput(
+                        inputPlaceholder: "Fortune Cookie",
+                        iconData: Mdi.account,
+                        inputType: TextInputType.text,
+                        controller: pageController.nameController,
+                        focus: pageController.nameFocusNode),
+                    PrimaryInput(
                       inputPlaceholder: "***********",
                       iconData: Uil.lock,
+                      controller: pageController.passwordController,
+                      focus: pageController.passwordFocusNode,
                     ),
                     Center(
                       child: InkWell(
@@ -78,7 +85,7 @@ class LoginPage extends StatelessWidget {
                   height: spacing * 4,
                 ),
                 DefaultButton(
-                  onPressed: () => Get.toNamed('/restauran_list'),
+                  onPressed: () => pageController.login(),
                   title: "Login",
                   isPrimary: true,
                 ),

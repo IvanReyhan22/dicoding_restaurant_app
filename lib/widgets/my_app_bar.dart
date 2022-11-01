@@ -6,8 +6,11 @@ import 'package:open_resto/common/styles.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? option;
-  final String? title;
-  const MyAppBar({super.key, this.option, this.title});
+  final String? title, prefixIcon;
+  final TextAlign? titleAlign;
+
+  const MyAppBar(
+      {super.key, this.option, this.title, this.prefixIcon, this.titleAlign});
 
   @override
   Size get preferredSize => const Size.fromHeight(spacing * 8);
@@ -22,13 +25,16 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              InkWell(
-                onTap: () => Get.back(),
-                child: const Iconify(Uil.angle_left_b,
-                    color: orange400, size: spacing * 4),
-              ),
+              if (prefixIcon != null) ...[
+                InkWell(
+                  onTap: () => Get.back(),
+                  child:
+                      Iconify(prefixIcon!, color: orange400, size: spacing * 4),
+                ),
+              ],
               Text(
                 title ?? "",
+                textAlign: titleAlign ?? TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
                     .headline5

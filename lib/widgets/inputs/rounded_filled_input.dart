@@ -1,11 +1,6 @@
-import 'dart:developer';
-
 import 'package:debounce_builder/debounce_builder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
-import 'package:get/get_rx/src/rx_workers/utils/debouncer.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:open_resto/common/styles.dart';
 
@@ -45,7 +40,7 @@ class RoundedFilledInput extends StatelessWidget {
             style: const TextStyle(
               color: black,
               fontSize: 18,
-              fontWeight: FontWeight.normal,
+              fontWeight: FontWeight.w500,
               letterSpacing: 1.2,
             ),
             decoration: InputDecoration(
@@ -73,7 +68,7 @@ class RoundedFilledInput extends StatelessWidget {
                   child: Iconify(
                     icondata,
                     size: spacing,
-                    color: focusNode.hasFocus ? orange400 : neutral400,
+                    color: focusNode.hasFocus ? orange400 : neutral500,
                   ),
                 ),
               ),

@@ -17,6 +17,15 @@ dependencies:
   get: ^4.6.5
   http: ^0.13.5
   debounce_builder: ^0.9.0
+  google_nav_bar: ^5.0.6
+  sqflite: ^2.2.0+2
+  path: ^1.8.2
+  shared_preferences: ^2.0.15
+  flutter_switch: ^0.3.2
+  flutter_local_notifications: ^12.0.3
+  intl: ^0.17.0
+  android_alarm_manager_plus: ^2.1.0
+  rxdart: ^0.27.5
 
 dev_dependencies:
   flutter_test:

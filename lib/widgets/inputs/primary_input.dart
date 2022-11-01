@@ -6,31 +6,33 @@ import 'package:open_resto/widgets/inputs/controller/input_controller.dart';
 class PrimaryInput extends StatelessWidget {
   final String inputPlaceholder;
   final String iconData;
+  final TextEditingController controller;
+  final FocusNode focus;
   final TextInputType? inputType;
   const PrimaryInput(
       {super.key,
       required this.inputPlaceholder,
       required this.iconData,
-      this.inputType});
+      this.inputType,
+      required this.controller,
+      required this.focus});
 
   @override
   Widget build(BuildContext context) {
-    final InputController controller = InputController();
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(spacing * 5),
           boxShadow: [
             BoxShadow(
-              color: controller.focus.hasFocus ? neutral200 : lightBackground,
+              color: focus.hasFocus ? neutral200 : lightBackground,
               spreadRadius: spacing / 4,
               blurRadius: spacing,
             )
           ]),
       child: TextField(
-        controller: controller.controller,
-        focusNode: controller.focus,
-        onTap: () => controller.requestTextFocus(),
+        controller: controller,
+        focusNode: focus,
         keyboardType: inputType ?? TextInputType.text,
         style: const TextStyle(
           color: black,
@@ -63,7 +65,7 @@ class PrimaryInput extends StatelessWidget {
               child: Iconify(
                 iconData,
                 size: spacing,
-                color: controller.focus.hasFocus ? orange400 : neutral400,
+                color: focus.hasFocus ? orange400 : neutral400,
               ),
             ),
           ),

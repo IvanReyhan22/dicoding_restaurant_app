@@ -15,16 +15,16 @@ class Restaurant {
       this.menus,
       this.customerReviews});
 
-  final String id;
-  final String name;
-  final String description;
-  final String pictureId;
-  final String city;
-  final double rating;
-  final String? address;
-  final List<Category>? categories;
-  final Menus? menus;
-  final List<CustomerReview>? customerReviews;
+  late String id;
+  late String name;
+  late String description;
+  late String pictureId;
+  late String city;
+  late double rating;
+  late String? address;
+  late List<Category>? categories;
+  late Menus? menus;
+  late List<CustomerReview>? customerReviews;
 
   factory Restaurant.fromJson(Map<String, dynamic> json) => Restaurant(
         id: json["id"],
@@ -45,12 +45,34 @@ class Restaurant {
             : null,
       );
 
+  Map<String, dynamic> toMap() {
+    return {
+      "id": id,
+      "name": name,
+      "description": description,
+      "pictureId": pictureId,
+      "city": city,
+      "address": address,
+      "rating": rating,
+    };
+  }
+
+  Restaurant.fromMap(Map<String, dynamic> map) {
+    id = map["id"];
+    name = map["name"];
+    description = map["description"];
+    city = map["city"];
+    address = map["address"];
+    pictureId = map["pictureId"];
+    rating = map["rating"];
+  }
+
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
         "description": description,
         "city": city,
-        "address": address ?? null,
+        "address": address,
         "pictureId": pictureId,
         "rating": rating,
         "categories": categories != null
